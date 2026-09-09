@@ -46,8 +46,12 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* The theme has three states. The OS preference decides on its own, unless the
+   toggle has explicitly stamped a choice on <html>; an explicit choice wins in
+   both directions. The dark values are repeated because CSS cannot share one
+   declaration block between a media query and a selector - keep them in step. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
@@ -64,6 +68,27 @@ input[type="number"] {
     --series-3: #199e70;
   }
 }
+
+:root[data-theme='dark'] {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+
+    /* Not a flip of the light values: the same hues stepped for the dark
+       surface, validated as a set against it. */
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+}
+
+/* Make Tailwind's dark: utilities follow the stamped choice too, instead of
+   only the OS preference. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 /* Espone il tema come token Tailwind: bg-surface, text-heading, border-line... */
 @theme inline {

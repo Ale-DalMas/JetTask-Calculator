@@ -2,6 +2,7 @@ import { useState } from 'react'
 import InfoGrid from './components/InfoGrid'
 import Result from './components/Result'
 import Header from './components/Header'
+import ThemeToggle from './components/ThemeToggle'
 import {
   REGIONS,
   ALIQUOTE,
@@ -173,13 +174,17 @@ function App() {
 
     setContractType(contract)
     setDaysWorked(days)
-    if (result) calculate({ contract, days })
   }
 
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-col gap-7 px-5 pt-8 pb-16">
 
-      <Header />
+      <div className="flex items-center justify-between gap-6">
+        <div className="flex-1">
+          <Header />
+        </div>
+        <ThemeToggle />
+      </div>
 
       <InfoGrid
         ral={ral}

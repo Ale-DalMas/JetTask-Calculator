@@ -7,14 +7,6 @@ import Selector from './Selector'
 const bareInput =
   'w-full min-w-0 border-0 bg-transparent p-0 font-mono text-xl font-medium text-heading outline-none focus:ring-0 placeholder:text-body/50'
 
-const chipBase =
-  'cursor-pointer rounded-full border px-3.5 py-2 text-[15px] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
-
-const chipClass = (active) =>
-  active
-    ? `${chipBase} border-accent-line bg-accent-soft text-accent`
-    : `${chipBase} border-line bg-chip text-heading hover:border-accent-line`
-
 function InfoGrid({
   ral,
   setRal,

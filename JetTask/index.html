@@ -7,6 +7,20 @@
     <title>jettask</title>
   </head>
   <body>
+    <script>
+      // Runs before the first paint: React would only get here after it.
+      try {
+        var saved = localStorage.getItem('theme')
+      } catch (e) {
+        saved = null
+      }
+      document.documentElement.dataset.theme =
+        saved === 'dark' || saved === 'light'
+          ? saved
+          : matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
