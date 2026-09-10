@@ -157,10 +157,6 @@ Questa è una stima, non una busta paga. In particolare:
 - **La RAL è trattata come il reddito effettivamente percepito nell'anno**, non
   come una retribuzione contrattuale annua da riscalare sui giorni lavorati. Chi
   ha lavorato solo parte dell'anno deve inserire quanto ha davvero guadagnato.
-- **I parametri seguono la riforma IRPEF a tre scaglioni in vigore dal 2024** e
-  vanno verificati rispetto all'anno d'imposta che si vuole rappresentare. Le
-  ulteriori misure introdotte dalla legge di bilancio 2025 sotto i 40.000 € di
-  reddito non sono implementate.
 - **Gli arrotondamenti non seguono alcuna regola ufficiale**: gli importi sono
   calcolati a precisione piena e arrotondati solo al momento di mostrarli.
 
@@ -169,8 +165,8 @@ Questa è una stima, non una busta paga. In particolare:
 L'applicazione segue la preferenza del sistema operativo finché non si usa
 l'interruttore accanto all'intestazione; quella scelta viene applicata su
 `<html data-theme>`, salvata in `localStorage` e riapplicata da uno script
-inline in `index.html` prima del primo paint, così chi usa il tema scuro non
-vede un lampo bianco a ogni caricamento.
+inline in `index.html`. Inserito per comodità dello sviluppatore e dello user così che si
+possa controllare in maniera rapida che i temi scelti siano godibili in entrambi i temi.
 
 ## Fonti
 
